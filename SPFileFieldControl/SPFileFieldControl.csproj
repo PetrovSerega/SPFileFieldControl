@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAF3506D-4CF6-41FE-BE42-C400151C86D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPFileFieldControl</RootNamespace>
+    <AssemblyName>SPFileFieldControl</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ER_OnFileFieldCRUD\ER_OnFileFieldCRUD.cs" />
+    <Compile Include="ER_OnItemDeleting\ER_OnItemDeleting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPFileField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CONTROLTEMPLATES\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7bbcd36b-43ce-4f14-98a4-fb16f278ba2c}</SharePointProjectItemId>
+    </None>
+    <None Include="ER_OnFileFieldCRUD\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4846eb26-845c-4834-b5a4-9767114ca689}</SharePointProjectItemId>
+    </None>
+    <None Include="ER_OnItemDeleting\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1f4a4427-d82c-4e4b-84a8-a915d9d99f21}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Triggers\Triggers.feature">
+      <FeatureId>{200651d9-5ced-4085-8979-81c861d693ee}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="LAYOUTS\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f810887b-6297-4794-bc67-3d0cd3a44149}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{c17ca60d-2327-4fe6-8d7e-c72c1622a36d}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="STYLES\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fb6ed433-515e-42e1-807c-01b985846abf}</SharePointProjectItemId>
+    </None>
+    <None Include="XML\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{94eb57f0-5ed4-41cf-84bf-dbac78865612}</SharePointProjectItemId>
+    </None>
+    <None Include="XSL\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{62f94ec9-8ec7-40a4-9c53-b0e85bd4cf7d}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="CONTROLTEMPLATES\SPFileFieldControl.ascx" />
+    <Content Include="ER_OnFileFieldCRUD\Elements.xml" />
+    <Content Include="ER_OnItemDeleting\Elements.xml" />
+    <Content Include="Features\Triggers\Triggers.Template.xml">
+      <DependentUpon>Triggers.feature</DependentUpon>
+    </Content>
+    <Content Include="LAYOUTS\FileFieldControl.js" />
+    <Content Include="STYLES\FileFieldControl.css" />
+    <Content Include="XML\fldtypes_SPFileField.xml" />
+    <Content Include="XSL\fldtypes_SPFileField.xsl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

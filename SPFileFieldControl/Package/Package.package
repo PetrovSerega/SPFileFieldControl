@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c17ca60d-2327-4fe6-8d7e-c72c1622a36d" solutionId="c17ca60d-2327-4fe6-8d7e-c72c1622a36d" resetWebServer="false" name="SPFileFieldControl" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="200651d9-5ced-4085-8979-81c861d693ee" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="7bbcd36b-43ce-4f14-98a4-fb16f278ba2c" />
+    <projectItemReference itemId="62f94ec9-8ec7-40a4-9c53-b0e85bd4cf7d" />
+    <projectItemReference itemId="f810887b-6297-4794-bc67-3d0cd3a44149" />
+    <projectItemReference itemId="94eb57f0-5ed4-41cf-84bf-dbac78865612" />
+    <projectItemReference itemId="fb6ed433-515e-42e1-807c-01b985846abf" />
+  </projectItems>
+</package>

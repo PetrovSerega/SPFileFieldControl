@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers>
+      <Receiver>
+        <Name>ER_OnFileFieldCRUDFieldAdded</Name>
+        <Type>FieldAdded</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>SPFileFieldControl.ER_OnFileFieldCRUD.ER_OnFileFieldCRUD</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+      <Receiver>
+        <Name>ER_OnFileFieldCRUDFieldDeleting</Name>
+        <Type>FieldDeleting</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>SPFileFieldControl.ER_OnFileFieldCRUD.ER_OnFileFieldCRUD</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+  </Receivers>
+</Elements>

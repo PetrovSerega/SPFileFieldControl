@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Начинаем описание списка типов столбцов, которые присутствуют в данном проекте -->
+<FieldTypes>
+  <!-- Описываем столбец -->
+  <FieldType>
+    <!--Имя столбца используемое при создании экземпляров в CAML-->
+    <Field Name="TypeName">SPFileField</Field>
+    <!-- Имя родительского столбца (из стандартных/custom-полей) -->
+    <Field Name="ParentType">Text</Field>
+    <!-- Имя отображаемое в списке столбцов SharePoint -->
+    <Field Name="TypeDisplayName">SPFileField</Field>
+    <!-- Имя отображаемое при создании нового столбца -->
+    <Field Name="TypeShortDescription">SPFileField</Field>
+    <!-- Может быть создано  пользователем -->
+    <Field Name="UserCreatable">TRUE</Field>
+
+    <!--Задаём области, из которых доступно создание поля -->
+    <Field Name="ShowOnListCreate">TRUE</Field>
+    <Field Name="ShowOnSurveyCreate">TRUE</Field>
+    <Field Name="ShowOnDocumentLibraryCreate">TRUE</Field>
+    <Field Name="ShowOnColumnTemplateCreate">TRUE</Field>
+
+    <!--Увы, не нашёл как повлиять на отображаемое имя в списках фильтрации и сортировки-->
+    <Field Name="Sortable">FALSE</Field>
+    <Field Name="Filterable">FALSE</Field>
+
+    <!-- Если клиентсткое приложение не сможет правильно отобразить наше поле, то оно будет отображено как базовый тип (Text) -->
+    <Field Name="AllowBaseTypeRendering">TRUE</Field>
+    
+    <!-- Имя класс (до запятой) и сборка -->
+    <Field Name="FieldTypeClass">SPFileFieldControl.SPFileField, $SharePoint.Project.AssemblyFullName$</Field>
+
+    <!-- Свойства, которые могут быть заданы для описываемого типа. --> 
+    <PropertySchema>
+      <Fields>
+        <!-- В нашем случае это имя библиотеки, которую будем использовать как хранилище файлов, и имя поля, в котором будем хранить имя файла -->
+        <Field Name="LibraryName" DisplayName="Имя библиотеки" Type="Text" Required="TRUE" />
+      </Fields>
+    </PropertySchema>
+  </FieldType>
+</FieldTypes>
